@@ -1,3 +1,4 @@
+import { AddTaskModule } from "@/components/ui/module/task/AddTaskModule";
 import TaskCard from "@/components/ui/module/task/taskCard";
 import { selectFilter, selectTask } from "@/redux/features/task/taskSlice";
 import { useAppSelector } from "@/redux/hooks";
@@ -9,10 +10,14 @@ export default function Task() {
   console.log(tasks);
   return (
     <div>
-      <h1>task</h1>
+     <div className="flex justify-between mb-4 mt-4">
+       <h1 className="font-bold"> | Task |</h1>
+
+      <AddTaskModule></AddTaskModule>
+     </div>
       {tasks.map((task) => (
         <>
-          <TaskCard task={task} ></TaskCard>
+          <TaskCard task={task}></TaskCard>
         </>
       ))}
     </div>
